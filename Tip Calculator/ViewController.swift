@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         segControl.selectedSegmentIndex = index
         print("INDEX: ", index)
         calculateTip(self)
+        billamount.becomeFirstResponder()
     }
     
     override func viewDidLoad() {
@@ -49,8 +50,8 @@ class ViewController: UIViewController {
         let tip = bill * tipPercentages[segControl.selectedSegmentIndex]
         let total = bill + tip
         
-        tipamount.text = String(format: "$%.2f", tip)
-        totalamount.text = String(format: "$%.2f", total)
+        tipamount.text = String(format: "+ $%.2f", tip)
+        totalamount.text = String(format: "= $%.2f", total)
         
     }
     
