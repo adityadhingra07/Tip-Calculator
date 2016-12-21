@@ -14,7 +14,11 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @IBOutlet weak var total2: UILabel!
+    @IBOutlet weak var total3: UILabel!
+    @IBOutlet weak var total4: UILabel!
     @IBOutlet weak var totalamount: UILabel!
+    
     @IBOutlet weak var tipamount: UILabel!
     @IBOutlet weak var billamount: UITextField!
     @IBOutlet weak var segControl: UISegmentedControl!
@@ -50,8 +54,11 @@ class ViewController: UIViewController {
         let tip = bill * tipPercentages[segControl.selectedSegmentIndex]
         let total = bill + tip
         
-        tipamount.text = String(format: "+ $%.2f", tip)
-        totalamount.text = String(format: "= $%.2f", total)
+        tipamount.text = String(format: "$%.2f", tip)
+        totalamount.text = String(format: "$%.2f", total)
+        total2.text = String(format: "$%.2f", Double(total/2))
+        total3.text = String(format: "$%.2f", Double(total/3))
+        total4.text = String(format: "$%.2f", Double(total/4))
         
     }
     
